@@ -1,0 +1,90 @@
+
+//
+//  JSBaseProject.pch
+//  JSMY
+//
+//  Created by wuwu on 2017/6/29.
+//  Copyright © 2017年 jsmysoft. All rights reserved.
+//
+
+#ifndef JSBaseProject_pch
+#define JSBaseProject_pch
+
+#pragma mark - ***** 开发发布打印
+
+/*! 开发 */
+#ifdef DEBUG
+
+#define NSLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+/*! 发布 */
+#define NSLog(...)
+
+#endif
+
+#ifndef __IPHONE_7_0
+//#warning "This project uses features only available in iOS SDK 7.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+    /*! 系统头文件 */
+    #import <UIKit/UIKit.h> // UI
+    #import <Foundation/Foundation.h> // NS
+
+    /*! 全局宏定义文件 */
+    #import "JSDefin.h"
+    #import "JSFrameHeader.h"
+    #import "JSURLsPath.h"
+
+    /*! JSKit框架 */
+    #import "JSKit_Define.h"
+
+    /*! 网络封装的工具类 */
+    #import "AFNetworking.h"
+    #import "NetWorkTool.h"
+
+    /*! FMDB 封装 */
+    #import "FMDB.h"
+    #import "JKDBHelper.h"
+
+    /*! 离屏渲染绘制 layer */
+    #import "JMRoundedCorner.h"
+
+    /*! 键盘 */
+    #import "IQKeyboardManager.h"
+
+    /*! 加载框提示 */
+    #import "NSObject+JSProgressHUD.h"
+
+    /*! 缓存三方库 */
+    #import "UIImageView+WebCache.h"
+
+    /*! 警告框 */
+    #import "AlertHelper.h"
+    #import "UIViewController+JSAlertView.h"
+
+    /*! 自动布局三方库 */
+    #import "Masonry.h"
+
+    #pragma mark - ****** 系统类
+    /*! 系统类 */
+    #import "JSAPP.h"
+
+    /*! app跳转到系统的各种基本设置选项 */
+    #import "JSSystermSetting.h"
+
+    /*! 文本宽度/高度自适应 */
+    #import "JSAutoSizeWithWH.h"
+
+    #pragma mark - ****** 管理类
+    /*! JSKitManager类 */
+    #import "JSKitManager.h"
+
+    #pragma mark - ****** 扩展类
+    /*! 扩展类 */
+    #import "UIView+JSKit.h"
+
+#endif
+
+#endif /* JSBaseProject_pch */
